@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { useLocation } from 'react-router-dom';
+
+import { Box, CssBaseline, Typography } from '@mui/material';
+
 import './App.css';
 
+import { TopBar } from './component/topBar';
+import { NytApiKeyContext } from './context/nytApiKey';
+import { BookRoutes } from './component/route';
+import { pathToTitle } from './utils';
+
+const queryClient = new QueryClient();
 function App() {
+  const [apiKey, setApiKey] = useState('');
+  const location = useLocation();
+  console.log('location : ', location);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+
+      <NytApiKeyContext.Provider value={{ apiKey, setApiKey }}>
+        <QueryClientProvider client={queryClient}>
+          <Box component="nav">
+            <TopBar />
+
+            {location.key !== 'default' ? (
+              <Typography
+                align="center"
+                variant="h3"
+                style={{ padding: '15px' }}
+              >
+                {location.pathname !== '/'
+                  ? pathToTitle(location.pathname)
+                  : 'Best Sellers'}
+              </Typography>
+            ) : null}
+
+            <BookRoutes />
+          </Box>
+        </QueryClientProvider>
+      </NytApiKeyContext.Provider>
+    </>
   );
 }
 

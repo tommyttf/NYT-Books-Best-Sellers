@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "isolatedModules": false,
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./build",
+    "jsx": "react-jsx"
+  },
+  "exclude": [
+    "src/setupTests.ts",
+    "**/*.test.tsx"
+  ]
+}
