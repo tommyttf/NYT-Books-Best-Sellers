@@ -2,6 +2,7 @@
   "name": "nyt-books",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tommyttf.github.io/NYT-Books-Best-Sellers",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -31,10 +32,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "build:analyze": "craco build --analyze",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "prepublish": "npm run build",
+    "publish": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,5 +57,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.0.0",
+    "@craco/types": "^7.0.0",
+    "gh-pages": "^5.0.0",
+    "webpack-bundle-analyzer": "^4.8.0"
   }
 }
