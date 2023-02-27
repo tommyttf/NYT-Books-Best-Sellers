@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/NYT-Books-Best-Sellers/static/css/main.073c9b0a.css",
-    "main.js": "/NYT-Books-Best-Sellers/static/js/main.d0c3c3c2.js",
+    "main.js": "/NYT-Books-Best-Sellers/static/js/main.13441622.js",
     "index.html": "/NYT-Books-Best-Sellers/index.html",
     "main.073c9b0a.css.map": "/NYT-Books-Best-Sellers/static/css/main.073c9b0a.css.map",
-    "main.d0c3c3c2.js.map": "/NYT-Books-Best-Sellers/static/js/main.d0c3c3c2.js.map"
+    "main.13441622.js.map": "/NYT-Books-Best-Sellers/static/js/main.13441622.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.d0c3c3c2.js"
+    "static/js/main.13441622.js"
   ]
 }
