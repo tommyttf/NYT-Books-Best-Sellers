@@ -34,6 +34,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:netlify": "craco build --platform=netlify",
     "build:analyze": "craco build --analyze",
     "test": "craco test",
     "eject": "react-scripts eject",

@@ -5,7 +5,11 @@ module.exports = {
     configure: (webpackConfig, { env }) => {
       if (env === 'production') {
         webpackConfig.output.libraryTarget = 'umd';
-        webpackConfig.output.publicPath = '/NYT-Books-Best-Sellers';
+        if (process.argv.includes('--platform=netlify')) {
+          webpackConfig.output.publicPath = '/';
+        } else {
+          webpackConfig.output.publicPath = '/NYT-Books-Best-Sellers';
+        }
 
         webpackConfig.externals = {
           react: 'React',
